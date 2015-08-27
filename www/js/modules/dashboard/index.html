@@ -1,0 +1,13 @@
+<div ng-if="authData.facebook" class="list card">
+  <div class="item item-avatar">
+    <img alt="Foto" ng-src="{{authData.facebook.profileImageURL}}">
+    <h2>{{ authData.facebook.displayName}}</h2>
+    <p>Facebook ID : {{ authData.facebook.id}}</p>
+  </div>
+</div>
+<span ng-show="authData" ng-controller="DashboardLogoutCtrl">
+ 	<button class="button button-block button-assertive" ng-click="logout()">
+  		LOGOUT
+	</button>
+</span>
+
