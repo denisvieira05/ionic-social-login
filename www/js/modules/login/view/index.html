@@ -1,5 +1,5 @@
 <div class="list">
-  <form action="" class="center-block">
+  <form action="" class="center-block" ng-submit="login(usuario)">
     <label class="item item-input item-floating-label">
       <span class="input-label">First Name</span>
       <input type="text" placeholder="First Name">
@@ -30,7 +30,7 @@
  
   
   <div class="button-bar">
-  <a class="button button-positive icon ion-social-facebook"></a>
+  <a class="button button-positive icon ion-social-facebook" ng-click="socialLogin('facebook')"></a>
   <a class="button">Second</a>
   <a class="button">Third</a>
 </div>
