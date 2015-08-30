@@ -2,12 +2,12 @@
 
 	'use strict';
 
-	angular.module('myApp.dashboard.controllers', [])
+	angular.module('myApp.dashboard.controllers')
 
-		.controller('LogoutCtrl', ['$scope','AuthSvc','$location', function ($scope,AuthSvc,$location) {
+		.controller('LogoutCtrl', ['$scope','SocialAuthSvc','$location', function ($scope,SocialAuthSvc,$location) {
 			
 			$scope.logout = function(){
-				AuthSvc.$unauth(function(data){
+				SocialAuthSvc.$unauth(function(data){
 					console.log(data);
 				});
 			}

@@ -12,7 +12,8 @@
 
     // App Modules
     'myApp.login',
-    'myApp.dashboard',  
+    'myApp.dashboard',
+    'myApp.register',  
 
     // External Dependencies  
     'ionic',

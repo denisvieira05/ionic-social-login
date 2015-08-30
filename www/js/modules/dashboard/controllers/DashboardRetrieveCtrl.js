@@ -2,11 +2,11 @@
 
 	'use strict';
 
-	angular.module('myApp.dashboard.controllers', [])
+	angular.module('myApp.dashboard.controllers')
 
-		.controller('DashboardRetrieveCtrl', ['$scope', function ($scope) {
+		.controller('DashboardRetrieveCtrl', ['$scope','SocialAuthSvc','$location', function ($scope,SocialAuthSvc,$location) {
 
-		    AuthSvc.$onAuth(function(authData){
+		    SocialAuthSvc.$onAuth(function(authData){
 			    if(authData === null){
 			      console.log("Usuário não autenticado");		  
 					$location.path('login');

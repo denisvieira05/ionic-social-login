@@ -2,14 +2,41 @@
 
 	'use strict';
 
-	angular.module('myApp.login.services', [])
+	angular.module('myApp.login.services')
 
-		.factory('AuthSvc',['$firebaseAuth',function($firebaseAuth){
+		.factory('AuthSvc',['$firebaseAuth','$q','$location',function($firebaseAuth,$q,$location){
 
-		  var endPoint = 'https://ionic-sociallogin.firebaseio.com/';
-		  var usersRef = new Firebase(endPoint);
+			var login = function(user){
 
-		  return $firebaseAuth(usersRef);
+				var endPoint = 'https://ionic-sociallogin.firebaseio.com/';
+				var ref = new Firebase(endPoint);			
+
+				var retorno = $q.defer();
+
+				ref.authWithPassword({
+				  email    : user.email,
+				  password : user.password
+				}, function(error, authData) {
+				  if (error) {
+				    console.log("Login Failed!", error);
+				  } else {
+				    console.log("Authenticated successfully with payload:", authData);
+				    $location.path('/');
+				    retorno.resolve(authData);
+
+				    ref.authAnonymously();
+
+				  }
+				});		
+
+				return retorno.promise;
+			}
+
+			return {			
+				login: login
+			};			
+
+
 
 		}]);
 

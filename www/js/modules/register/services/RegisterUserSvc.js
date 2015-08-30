@@ -2,9 +2,9 @@
 
 	'use strict';
 
-	angular.module('myApp.register.services', [])
+	angular.module('myApp.register.services')
 
-		.factory('RegisterUserSvc',['$firebaseAuth',function($firebaseAuth){
+		.factory('RegisterUserSvc',['$firebaseAuth','$q',function($firebaseAuth,$q){
 
 			var create = function(user){
 
@@ -14,8 +14,9 @@
 				var retorno = $q.defer();
 
 				ref.createUser({
-				  email    : user.email,
-				  password : user.password
+				  name: user.name,
+				  email: user.email,
+				  password: user.password
 				}, function(error, userData) {
 				  if (error) {
 				    console.log("Error creating user:", error);

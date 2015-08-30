@@ -1,16 +1,14 @@
 <div class="list">
-  <form action="" class="center-block" ng-submit="login(usuario)">
-    <label class="item item-input item-floating-label">
-      <span class="input-label">First Name</span>
-      <input type="text" placeholder="First Name">
-    </label>
-    <label class="item item-input item-floating-label">
-      <span class="input-label">Last Name</span>
-      <input type="text" placeholder="Last Name">
-    </label>
+  <form action="" class="center-block" ng-submit="login()">
+
     <label class="item item-input item-floating-label">
       <span class="input-label">Email</span>
-      <input type="text" placeholder="Email">
+      <input type="text" placeholder="Email" ng-model="user.email">
+    </label>
+
+    <label class="item item-input item-floating-label">
+      <span class="input-label">Password</span>
+      <input type="password" placeholder="Password" ng-model="user.password">
     </label>
 
     </br>
@@ -26,7 +24,7 @@
 
 </div>
 
-<div class="row">
+<div class="row" ng-controller="SocialLoginCtrl">
  
   
   <div class="button-bar">

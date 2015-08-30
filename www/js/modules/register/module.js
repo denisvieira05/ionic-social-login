@@ -2,6 +2,11 @@
 
   'use strict';
 
+  angular.module('myApp.register.controllers',[]);
+  angular.module('myApp.register.services',[]);
+  // angular.module('myApp.register.filters',[]);
+  // angular.module('myApp.register.directives',[]);  
+
   angular.module('myApp.register', [
     'myApp.register.controllers',
     'myApp.register.services',

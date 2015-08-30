@@ -2,13 +2,13 @@
 
 	'use strict';
 
-	angular.module('myApp.register.controllers', [])
+	angular.module('myApp.register.controllers')
 
 	  .controller('UserCreateCtrl', ['$scope','RegisterUserSvc', function ($scope,RegisterUserSvc) {
 
-			$scope.createUser = function(user) {
+			$scope.createUser = function() {
 
-		    	RegisterUserSvc.create(user).then(function(data){
+		    	RegisterUserSvc.create($scope.user).then(function(data){
 
 		    		console.log("Promise = "+data);
 

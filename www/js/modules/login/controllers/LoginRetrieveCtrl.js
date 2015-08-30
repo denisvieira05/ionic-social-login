@@ -2,28 +2,23 @@
 
 	'use strict';
 
-	angular.module('myApp.login.controllers', [])
+	angular.module('myApp.login.controllers')
 
 		.controller('LoginRetrieveCtrl', ['$scope','AuthSvc', function ($scope,AuthSvc) {
 
-			$scope.socialLogin = function(authMethod){
 
-		    AuthSvc.$authWithOAuthRedirect(authMethod).then(function(authData){
+			$scope.login = function() {
 
-		    }).catch(function(error){
-		      if(error.code === 'TRANSPORT_UNAVAILABLE'){
-		        
-		        AuthSvc.$authWithOAuthPopup(authMethod).then(function(authData){
+		    	AuthSvc.login($scope.user).then(function(data){
 
-		        })
+		    		console.log("Promise = "+data);
 
-		      }else{
-		        console.log(error);
-		      }
-
-		    })
-
-		  }
+				      //$rootScope.$broadcast(AUTH_EVENTS.loginSuccess);
+				      //$scope.setCurrentUser(user);
+			    }, function () {
+			        $scope.falhou = true;
+			    });	    	 
+			}  	
 
 		}]);
 

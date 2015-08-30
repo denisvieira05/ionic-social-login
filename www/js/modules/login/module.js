@@ -2,6 +2,11 @@
 
     'use strict';
 
+    angular.module('myApp.login.controllers',[]);
+    angular.module('myApp.login.services',[]);
+    // angular.module('myApp.login.filters',[]);
+    // angular.module('myApp.login.directives',[]);
+
     angular.module('myApp.login', [
       'myApp.login.controllers',
       'myApp.login.services',

@@ -5,7 +5,7 @@
     <p>Facebook ID : {{ authData.facebook.id}}</p>
   </div>
 </div>
-<span ng-show="authData">
+<span ng-controller="LogoutCtrl">
  	<button class="button button-block button-assertive" ng-click="logout()">
   		LOGOUT
 	</button>
