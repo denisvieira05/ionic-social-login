@@ -22,9 +22,7 @@
 				  } else {
 				    console.log("Authenticated successfully with payload:", authData);
 				    $location.path('/');
-				    retorno.resolve(authData);
-
-				    ref.authAnonymously();
+				    // retorno.resolve(authData);
 
 				  }
 				});		

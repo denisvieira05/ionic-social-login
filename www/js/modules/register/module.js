@@ -22,7 +22,7 @@
       .state('register', {
         url: '/register',
         templateUrl: modulePath+'index.html',
-        controller: 'RegisterRetrieveCtrl'
+        controller: 'UserCreateCtrl'
       });  
 
   }]);

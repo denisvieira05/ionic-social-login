@@ -7,6 +7,7 @@
 		.controller('DashboardRetrieveCtrl', ['$scope','SocialAuthSvc','$location', function ($scope,SocialAuthSvc,$location) {
 
 		    SocialAuthSvc.$onAuth(function(authData){
+		    	console.log(authData);
 			    if(authData === null){
 			      console.log("Usuário não autenticado");		  
 					$location.path('login');

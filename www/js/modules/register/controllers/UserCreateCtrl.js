@@ -10,14 +10,19 @@
 
 		    	RegisterUserSvc.create($scope.user).then(function(data){
 
-		    		console.log("Promise = "+data);
+		    		// console.log("Promise = "+data);
 
 				      //$rootScope.$broadcast(AUTH_EVENTS.loginSuccess);
 				      //$scope.setCurrentUser(user);
-			    }, function () {
-			        $scope.falhou = true;
-			    });	    	 
+			    }, function (error) {
+			  
+			    });	    	    	 
 			}  	
+
+	    	$scope.alert = {
+	    		'title': 'error.code',
+	    		'detail': 'error.message'
+	    	};					
 	    
 	  }]);
 

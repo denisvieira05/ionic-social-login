@@ -5,6 +5,16 @@
     <p>Facebook ID : {{ authData.facebook.id}}</p>
   </div>
 </div>
+
+<div ng-if="authData.password" class="list card">
+  <div class="item item-avatar">
+    <img alt="Foto" ng-src="{{authData.password.profileImageURL}}">
+    <h2>{{ authData.password.email}}</h2>
+    <p>Facebook ID : </p>
+    <p>{{ authData.uid}}</p>
+  </div>
+</div>
+
 <span ng-controller="LogoutCtrl">
  	<button class="button button-block button-assertive" ng-click="logout()">
   		LOGOUT
