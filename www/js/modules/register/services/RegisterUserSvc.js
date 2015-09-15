@@ -4,7 +4,7 @@
 
 	angular.module('myApp.register.services')
 
-		.factory('RegisterUserSvc',['$firebaseAuth','$q',function($firebaseAuth,$q){
+		.factory('RegisterUserSvc',['$firebaseAuth','$q','$location',function($firebaseAuth,$q,$location){
 
 			var create = function(user){
 
